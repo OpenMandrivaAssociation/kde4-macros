@@ -2,7 +2,7 @@
 
 Name: kde4-macros
 Version: 3.91
-Release: %mkrel 6
+Release: %mkrel 7
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
 Source: kde4.macros
