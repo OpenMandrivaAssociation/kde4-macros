@@ -1,7 +1,7 @@
 %define __libtoolize /bin/true
 
 Name: kde4-macros
-Version: 3.93.0
+Version: 3.94.1
 Release: %mkrel 1
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
