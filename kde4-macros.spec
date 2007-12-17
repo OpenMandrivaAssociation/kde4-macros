@@ -10,7 +10,6 @@ URL: http://www.mandriva.com
 Requires: cmake
 License: GPL
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 Base install macros for kde 4
