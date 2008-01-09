@@ -1,13 +1,13 @@
 %define __libtoolize /bin/true
 
 Name: kde4-macros
-Version: 3.94.1
+Version: 4.0.0
 Release: %mkrel 1
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
 Source: kde4.macros
 URL: http://www.mandriva.com
-Requires: cmake
+Requires: cmake >= 2.5.0
 License: GPL
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
