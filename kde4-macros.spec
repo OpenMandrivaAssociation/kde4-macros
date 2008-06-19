@@ -1,11 +1,11 @@
 Name: kde4-macros
 Version: 4.1
-Release: %mkrel 7
+Release: %mkrel 8
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
 Source: kde4.macros
 URL: http://www.mandriva.com
-Requires: cmake >= 2.5.0
+Requires: cmake >= 2.6.0
 License: GPL
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
