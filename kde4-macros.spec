@@ -1,3 +1,4 @@
+# TODO: add a switch to have Debug on cooker and Release on official for -DCMAKE_BUILD_TYPE=
 Name: kde4-macros
 Version: 4.1.71
 Release: %mkrel 3
