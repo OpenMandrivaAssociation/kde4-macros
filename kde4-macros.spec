@@ -1,7 +1,7 @@
 # TODO: add a switch to have Debug on cooker and Release on official for -DCMAKE_BUILD_TYPE=
 Name: kde4-macros
-Version: 4.1.71
-Release: %mkrel 3
+Version: 4.1.73
+Release: %mkrel 1
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
 Source: kde4.macros
