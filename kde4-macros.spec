@@ -1,5 +1,5 @@
 Name: kde4-macros
-Version: 4.4.3
+Version: 4.4.95
 Release: %mkrel 1
 Group: Development/KDE and Qt
 Summary: Base install macros for kde 4
