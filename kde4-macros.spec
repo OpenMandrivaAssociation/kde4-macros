@@ -1,6 +1,6 @@
 Name:		kde4-macros
-Version:	4.6.5
-Release:	%mkrel 2
+Version:	4.7.80
+Release:	1
 Group:		Development/KDE and Qt
 Summary:	Base install macros for kde 4
 License:	GPL
