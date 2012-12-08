@@ -1,0 +1,43 @@
+%_kde_prefix %_prefix
+%_kde_libdir %_kde_prefix/%_lib
+%_kde_iconsdir %_kde_prefix/share/icons
+%_kde_sysconfdir %_sysconfdir
+%_kde_datadir %_kde_prefix/share
+%_kde_configdir %_kde_datadir/config
+%_kde_appsdir %_kde_datadir/apps
+%_kde_applicationsdir %_kde_datadir/applications/kde4
+%_kde_docdir %_kde_prefix/share/doc
+%_kde_bindir %_kde_prefix/bin
+%_kde_sbindir %_kde_prefix/sbin
+%_kde_includedir %_kde_prefix/include
+%_kde_mandir %{_kde_datadir}/man
+%_kde_autostart %_kde_prefix/share/autostart
+%_kde_services %_kde_prefix/share/kde4/services
+%_kde_servicetypes %_kde_prefix/share/kde4/servicetypes
+%_kde_plugindir %_kde_libdir/kde4/plugins/
+%_kde_debug %(if [ "%mandriva_branch" = "Cooker" ]; then echo Debug; else echo Release; fi)
+
+%cmake_kde4 \
+  QTDIR="%qt4dir" ; export QTDIR ; \
+  PATH="%qt4dir/bin:$PATH" ; export PATH ; \
+  %define use_enable_pie 1 \
+  %{?_no_enable_pie: %{expand: %%global use_enable_pie 0}} \
+  %define enable_final 0 \
+  %{?_enable_final: %{expand: %%global enable_final 1}} \
+  %cmake \\\
+  %if %use_enable_pie \
+    -DKDE4_ENABLE_FPIE=ON \\\
+  %endif \
+  %if %enable_final \
+    -DKDE4_ENABLE_FINAL=ON \\\
+  %endif \
+  -DCMAKE_INSTALL_PREFIX=%_kde_prefix \\\
+  -DCMAKE_BUILD_TYPE=%{_kde_debug} \\\
+  -DKDE_DEFAULT_HOME=".kde4" \\\
+  -DKDE_DISTRIBUTION_TEXT="%(cat /etc/mandriva-release)" \\\
+  -DKDE4_USE_ALWAYS_FULL_RPATH=OFF \\\
+  -DKDE4_DATA_DIR=%_kde_appsdir \\\
+  -DENABLE_FAM=ON \\\
+  -DPHONON_INCLUDE_DIR=%{_includedir} \\\
+  -DDBUS_SERVICES_INSTALL_DIR=%_datadir/dbus-1/services \\\
+  -DDBUS_INTERFACES_INSTALL_DIR=%_datadir/dbus-1/interfaces
