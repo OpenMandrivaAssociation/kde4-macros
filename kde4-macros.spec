@@ -13,10 +13,8 @@ Requires:	distro-release
 %description
 Base install macros for kde 4
 
-%files 
-%_sysconfdir/rpm/macros.d/kde4.macros
-
 %install
-rm -rf %buildroot
-install -d -m 755 %buildroot%_sysconfdir/rpm/macros.d
-install -m 644 %SOURCE0 %buildroot%_sysconfdir/rpm/macros.d/
+install -m644 %{SOURCE0} -D %{buildroot}%{_sysconfdir}/rpm/macros.d/kde4.macros
+
+%files 
+%{_sysconfdir}/rpm/macros.d/kde4.macros
