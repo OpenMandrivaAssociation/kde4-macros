@@ -49,6 +49,7 @@
     -DBUILD_SHARED_LIBS:BOOL=ON \\\
     -DBUILD_STATIC_LIBS:BOOL=OFF \\\
     -DCMAKE_MODULE_LINKER_FLAGS="%(echo %ldflags|sed -e 's#-Wl,--no-undefined##')" \\\
+    -Wno-dev \\\
 %if %use_enable_pie \
     -DKDE4_ENABLE_FPIE=ON \\\
 %endif \
